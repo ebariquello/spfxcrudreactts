@@ -1,0 +1,13 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-crud-inline-grid-client-side-solution",
+    "id": "262b51dc-d571-464a-a76c-eb6484ce3c26",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-crud-inline-grid.sppkg"
+  }
+}

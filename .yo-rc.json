@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.1",
+    "libraryName": "spfx-crud-inline-grid",
+    "libraryId": "262b51dc-d571-464a-a76c-eb6484ce3c26",
+    "environment": "spo"
+  }
+}
