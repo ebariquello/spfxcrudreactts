@@ -1,16 +1,29 @@
 
-import React = require("react");
-import { IContact } from "../../../../models/Contact";
-import { ISheetProps } from "./sheetProps";
-import { ISheetState } from "./sheetState";
+import * as React from 'react'; 
+import { IContact, Contact } from "../../../../models/Contact";
+//import { ICrudSheetProps } from "./sheetProps";
+// import { ISheetState } from "./sheetState";
 import CrudRow from "./row";
-import { Button } from 'office-ui-fabric-react/lib/Button';
+
+export interface ISheetState {
+  contacts: Contact[];
+ 
+}
+export interface ICrudSheetProps{
+  contacts: IContact[];
+  saveContact: Function  ;
+  deleteContact:Function;
+  addContact:  Function;
+}
+
+
+
 //Classe representa uma única célula ou do grid uma célula.
-export default class CrudSheet extends React.Component<ISheetProps, ISheetState> {
+export default class CrudSheet extends React.Component<ICrudSheetProps, ISheetState> {
 
     private contact: IContact;
 
-    constructor(props: ISheetProps){
+    constructor(props: ICrudSheetProps){
         //Passando o props para o contructor da Classe
         super(props);
         
@@ -23,29 +36,29 @@ export default class CrudSheet extends React.Component<ISheetProps, ISheetState>
         this.contactAdded = this.contactAdded.bind(this);
     }
     //Método de contrução da celula
-    public render(): React.ReactElement<ISheetProps> {
+    public render(): React.ReactElement<ICrudSheetProps> {
         return (
             <div>
-              <div style={{'padding':'5px'}}>
-                <button onClick={this.contactAdded}>Add a Contact</button>
+              <div >
+                <button onClick={this.contactAdded}>Novo Contato</button>
               </div>
               <div className="ms-Grid">
                 <div className="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white">
                   <div className="ms-Grid-col ms-u-sm1 ms-u-md1 ms-u-lg1">
                   </div>
-                  <div className="ms-Grid-col ms-u-sm1 ms-u-md1 ms-u-lg1">
+                  <div className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2">
                     Nome do Contato
                   </div>
-                  <div className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-u-lg2">
+                  <div className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2">
                    Endereço
                   </div>
                   <div className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2">
                     Empresa
                   </div>
-                  <div className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-u-lg3">
+                  <div className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2">
                     Telefone
                   </div>
-                  <div className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-u-lg3">
+                  <div className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2">
                     E-mail
                   </div>
                 </div>

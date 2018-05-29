@@ -5,7 +5,16 @@
     "id": "262b51dc-d571-464a-a76c-eb6484ce3c26",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": true
+    "skipFeatureDeployment": true,
+    "features":[{
+      "title":"crud-sheet-contacts",
+      "description":"contacts-list-for-crud-sheet-web-part",
+      "id":"f50e5f49-662b-4cfc-bf27-a81d8816f8a4",
+      "version":"1.0.0.0",
+      "assets":{
+        "elementManifests":["elements.xml"]
+      }
+    }]
   },
   "paths": {
     "zippedPackage": "solution/spfx-crud-inline-grid.sppkg"

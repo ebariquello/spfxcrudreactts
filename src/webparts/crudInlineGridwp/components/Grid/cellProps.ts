@@ -5,5 +5,5 @@ export interface ICellProps {
     value: string;
     className: string;
     readOnly: boolean;
-    rowEdited: any;
+    rowEdited: Function;
   }

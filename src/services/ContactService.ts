@@ -23,14 +23,14 @@ export class ContactsService implements IContactsService {
 
     public getContacts(): Promise<Contact[]>{
 
-        let url = this.webAbsoluteUrl + "/_api/Lists/getByTitle('Contacts')/items?$select=Id,Title,FirstName,WorkPhone,Email";
+        let url = this.webAbsoluteUrl + "/_api/Lists/getByTitle('Contacts')//items?$select=Id,Title,Address,Company,Phone,Email";
         this.contacts = [];
 
         return this.httpClient.get(url, SPHttpClient.configurations.v1)
         .then((response: SPHttpClientResponse) => {
             return response.json().then((data) => {
                 data.value.forEach(c => {
-                    this.contacts.push(new Contact(c.Id,c.Title,c.FirstName,c.WorkPhone,c.Email));
+                    this.contacts.push(new Contact(c.Id,c.Title,c.Address, c.Company,c.Phone,c.Email));
                 });
                 return this.contacts;
             });
@@ -43,9 +43,10 @@ export class ContactsService implements IContactsService {
 
         const httpClientOptions: ISPHttpClientOptions = {
             body:JSON.stringify({
-                Title: contact.lastName,
-                FirstName: contact.firstName,
-                WorkPhone: contact.phone,
+                Title: contact.name,
+                Address: contact.address,
+                Company: contact.company,
+                Phone: contact.phone,
                 Email: contact.email
             })
         };
@@ -80,10 +81,11 @@ export class ContactsService implements IContactsService {
         
         const httpClientOptions: ISPHttpClientOptions = {
             body:JSON.stringify({
-                Title: "Last Name",
-                FirstName: "First Name",
-                WorkPhone: "Phone Number",
-                Email: "E-mail"
+                Title: "Full Name",
+                Address: "St Memphis 01",
+                Company: "XPTO",
+                Phone: "34344444",
+                Email: "teste@teste.com.br"
             })
         };
         

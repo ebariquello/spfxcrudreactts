@@ -1,11 +1,11 @@
 
-import React = require("react");
+import * as React from 'react'; 
 import { IRowProps } from "./rowProps";
 import { IContact } from "../../../../models/Contact";
 import CrudCell from "./cell";
 
 //Classe representa uma única célula ou do grid uma célula.
-export default class CrudRow extends React.Component<IRowProps, void> {
+export default class CrudRow extends React.Component<IRowProps, null> {
 
     private contact: IContact;
 
@@ -25,11 +25,11 @@ export default class CrudRow extends React.Component<IRowProps, void> {
         return (<div className="ms-Grid-row ms-bgColor-themeLighter ms-fontColor-neutralDark">
         <div className="ms-Grid-col ms-u-sm1 ms-u-md1 ms-u-lg1"><i onClick={this.rowDeleted} className="ms-Icon ms-Icon--Delete" aria-hidden="true"></i></div>
         {/* <CrudCell key={this.contact.id } readOnly={false} name="Id" value={this.contact.id.toString()} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm1 ms-u-md1 ms-u-lg1" /> */}
-        <CrudCell key={this.contact.id} readOnly={false} name="name" value={this.contact.name} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-u-lg2" />
-        <CrudCell key={this.contact.id} readOnly={false} name="address" value={this.contact.address} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2" />
-        <CrudCell key={this.contact.id} readOnly={false} name="company" value={this.contact.company} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2" />
-        <CrudCell key={this.contact.id} readOnly={false} name="phone" value={this.contact.phone} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-u-lg3" />
-        <CrudCell key={this.contact.id} readOnly={false} name="email" value={this.contact.email} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-u-lg3" />
+        <CrudCell key={this.contact.id} readOnly={false} name="name" value={this.contact.name} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2" />
+        <CrudCell key={this.contact.id +10} readOnly={false} name="address" value={this.contact.address} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2" />
+        <CrudCell key={this.contact.id +20} readOnly={false} name="company" value={this.contact.company} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md3 ms-u-lg2" />
+        <CrudCell key={this.contact.id + 30} readOnly={false} name="phone" value={this.contact.phone} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2" />
+        <CrudCell key={this.contact.id+ 40} readOnly={false} name="email" value={this.contact.email} rowEdited={this.rowEdited} className="ms-Grid-col ms-u-sm2 ms-u-md2 ms-u-lg2" />
      </div>);
     }
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Contacts"
+                OnQuickLaunch="TRUE"
+                TemplateType="101001"
+                Url="Lists/Contacts"
+                Description="My Contacts">
+    <Data>
+      <Rows>
+        <Row>
+
+          <Field Name="Title">Cox</Field>
+          <Field Name="Address">RUA XPTO</Field>
+          <Field Name="Company">EMP 01</Field>
+           <Field Name="Phone">555-555-5555</Field>
+          <Field Name="Email">brianc@wingtip.com</Field>
+        </Row>
+      </Rows>
+    </Data>
+  </ListInstance>
+</Elements>

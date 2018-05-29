@@ -1,6 +1,7 @@
-import { ICellProps } from "./cellProps";
-import React = require("react");
+
+import * as React from 'react'; 
 import { ICellState } from "./cellState";
+import { ICellProps } from "./cellProps";
 
 //Classe representa uma única célula ou do grid uma célula.
 export default class CrudCell extends React.Component<ICellProps, ICellState> {
